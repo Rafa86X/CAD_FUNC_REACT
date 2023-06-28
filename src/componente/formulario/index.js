@@ -6,6 +6,7 @@ import Botao from '../botao';
 const Formulario = () => {
 
     const times = [
+        '',
         'Programação',
         'Front-End',
         'Back-End',
@@ -16,16 +17,22 @@ const Formulario = () => {
         'Inovação e Gestão'
     ]
 
-    return(
 
+    const aoSalvar = (evento) =>{
+
+        evento.preventDefault()
+        console.log("oii");
+
+    }
+
+    return(
     <section className='formulario'>
-        <form>
+        <form onSubmit={aoSalvar}>
             <h2>Prencha os dados para criar os card</h2>
-            <CampoTexto label="Nome" placeholder="Digite seu nome" />
-            <CampoTexto label="Cargo" placeholder="Digite seu cargo" />
+            <CampoTexto obrigatorio={true}  label="Nome" placeholder="Digite seu nome" />
+            <CampoTexto obrigatorio={true} label="Cargo" placeholder="Digite seu cargo" />
             <CampoTexto label="Imagem" placeholder="Digite seu img" />
-            <CampoTexto label="Time" placeholder="Digite seu time" />
-            <ListaSuspensa label="Selecione sua Área" itens={times}/>
+            <ListaSuspensa obrigatorio={true} label="Selecione sua Área" itens={times}/>
             <Botao>
                 Cadastrar
             </Botao>
