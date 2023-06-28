@@ -1,4 +1,4 @@
-import CampoTexto from './componente/CampoTexto';
+import Formulario from './componente/formulario';
 import Banner from './componente/banner';
 
 
@@ -6,9 +6,8 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <CampoTexto />
-      
-    </div>
+      <Formulario />
+     </div>
   );
 }
 
