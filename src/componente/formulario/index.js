@@ -4,7 +4,7 @@ import ListaSuspensa from '../ListaSusoensa/listasuspensa';
 import Botao from '../botao';
 import { useState } from 'react';
 
-const Formulario = () => {
+const Formulario = (props) => {
 
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
@@ -28,6 +28,9 @@ const Formulario = () => {
     const aoSalvar = (evento) =>{
 
         evento.preventDefault()
+        props.aoColaboradorCadastrado({
+            nome, cargo, img, time
+        })
         console.log("oii", nome, cargo, img, time);
 
     }
