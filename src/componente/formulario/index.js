@@ -11,27 +11,14 @@ const Formulario = (props) => {
     const [img, setImg] = useState('')
     const [time, setTime] = useState('')
 
-
-    const times = [
-        '',
-        'Programação',
-        'Front-End',
-        'Back-End',
-        'Data Scienc',
-        'DevOps',
-        'Ux e Design',
-        'Mobile',
-        'Inovação e Gestão'
-    ]
-
-
     const aoSalvar = (evento) =>{
 
         evento.preventDefault()
-        props.aoColaboradorCadastrado({
+        props.aoColaboradorCadastrado(
+            {
             nome, cargo, img, time
-        })
-        console.log("oii", nome, cargo, img, time);
+            }
+        )
 
     }
 
@@ -50,7 +37,7 @@ const Formulario = (props) => {
             <CampoTexto label="Imagem" placeholder="Digite seu img" 
             valor={img} aoAlterado={valor => setImg(valor)}/>
 
-            <ListaSuspensa obrigatorio={true} label="Selecione sua Área" itens={times}
+            <ListaSuspensa obrigatorio={true} label="Selecione sua Área" itens={props.times}
             valor={time} aoAlterado={valor => setTime(valor)}/>
 
             <Botao>
