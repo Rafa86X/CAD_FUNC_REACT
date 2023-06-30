@@ -19,6 +19,10 @@ const Formulario = (props) => {
             nome, cargo, img, time
             }
         )
+        setNome('')
+        setCargo('')
+        setImg('')
+        setTime('')
 
     }
 
@@ -28,17 +32,30 @@ const Formulario = (props) => {
             <h2>Prencha os dados para criar os card</h2>
 
             <CampoTexto 
-            obrigatorio={true}  label="Nome"  placeholder="Digite seu nome" valor={nome} 
-            aoAlterado={valor => setNome(valor)}/>
+                obrigatorio={true} 
+                label="Nome"  
+                placeholder="Digite seu nome" valor={nome} 
+                aoAlterado={valor => setNome(valor)}/>
 
-            <CampoTexto obrigatorio={true} label="Cargo" placeholder="Digite seu cargo" 
-            valor={cargo} aoAlterado={valor => setCargo(valor)}/>
+            <CampoTexto 
+                obrigatorio={true} 
+                label="Cargo" 
+                placeholder="Digite seu cargo" 
+                valor={cargo} 
+                aoAlterado={valor => setCargo(valor)}/>
 
-            <CampoTexto label="Imagem" placeholder="Digite seu img" 
-            valor={img} aoAlterado={valor => setImg(valor)}/>
+            <CampoTexto 
+                label="Imagem" 
+                placeholder="Digite seu img" 
+                valor={img} 
+                aoAlterado={valor => setImg(valor)}/>
 
-            <ListaSuspensa obrigatorio={true} label="Selecione sua Área" itens={props.times}
-            valor={time} aoAlterado={valor => setTime(valor)}/>
+            <ListaSuspensa 
+                obrigatorio={true} 
+                label="Selecione sua Área" 
+                itens={props.times}
+                valor={time} 
+                aoAlterado={valor => setTime(valor)}/>
 
             <Botao>
                 Cadastrar
